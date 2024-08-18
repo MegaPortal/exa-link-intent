@@ -115,7 +115,7 @@
         }
       } catch (e) {
         // 1 month ago
-        now = now - 2592000000;
+        now = Date.now() - 2592000000;
       }
 
       var timeString = new Date(now).toISOString();
