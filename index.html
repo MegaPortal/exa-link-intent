@@ -74,51 +74,54 @@
 
   <script>
 
-    window.onClickHandler = function () {
-      return;
-    }
-
-    var url = new URL(window.location.href);
-    var query = url.searchParams.get('query');
-    var time = url.searchParams.get('time'); // 1: past day, 2: past week, 3: past month, 4: past year, date: specific time
-
-    if (!query) {
-      aHref.innerHTML = 'No query parameter found';
-      return;
-    }
-
-    if (!time) {
-      aHref.innerHTML = 'No time parameter found';
-      return;
-    }
-
-    var now = Date.now();
-
-    if (time) {
-      if (time === '1') {
-        now = now - 86400000;
-      } else if (time === '2') {
-        now = now - 604800000;
-      } else if (time === '3') {
-        now = now - 2592000000;
-      } else if (time === '4') {
-        now = now - 7776000000;
-      } else if (time === '5') {
-        now = now - 31536000000;
-      } else {
-        now = new Date(time).getTime();
+    (function () {
+      window.onClickHandler = function () {
+        return;
       }
-    }
-
-    var timeString = new Date(now).toISOString();
-    var filter = { "numResults": 30, "domainFilterType": "include", "type": "neural", "useAutoprompt": false, "startPublishedDate": "2024-07-18T13:43:02.949Z" }
-    var aHref = document.getElementById('exa-link');
-    var link = `https://exa.ai/search?q=${query}&filters=${encodeURIComponent(JSON.stringify(filter))}`;
-
-    window.onClickHandler = function onClickHandler() {
-      window.open(link, '_blank');
-    }
-
+  
+      var aHref = document.getElementById('exa-link');
+  
+      var url = new URL(window.location.href);
+      var query = url.searchParams.get('query');
+      var time = url.searchParams.get('time'); // 1: past day, 2: past week, 3: past month, 4: past year, date: specific time
+  
+      if (!query) {
+        aHref.innerHTML = 'No query parameter found';
+        return;
+      }
+  
+      if (!time) {
+        aHref.innerHTML = 'No time parameter found';
+        return;
+      }
+  
+      var now = Date.now();
+  
+      if (time) {
+        if (time === '1') {
+          now = now - 86400000;
+        } else if (time === '2') {
+          now = now - 604800000;
+        } else if (time === '3') {
+          now = now - 2592000000;
+        } else if (time === '4') {
+          now = now - 7776000000;
+        } else if (time === '5') {
+          now = now - 31536000000;
+        } else {
+          now = new Date(time).getTime();
+        }
+      }
+  
+      var timeString = new Date(now).toISOString();
+      var filter = { "numResults": 30, "domainFilterType": "include", "type": "neural", "useAutoprompt": false, "startPublishedDate": "2024-07-18T13:43:02.949Z" }
+      var link = `https://exa.ai/search?q=${query}&filters=${encodeURIComponent(JSON.stringify(filter))}`;
+  
+      window.onClickHandler = function onClickHandler() {
+        window.open(link, '_blank');
+      }
+    })();
+    
   </script>
 </body>
 
