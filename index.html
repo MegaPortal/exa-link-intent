@@ -5,55 +5,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script defer src="/_vercel/insights/script.js"></script>
-  <title>Reveal.js Intent</title>
-  <meta name="description" content="High-performance HTML based website template." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
+  <title>Exa Link</title>
+  <meta name="description" content="Exa Link Redirect" />
   <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1f40ed;
+    }
+
+    .link-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font: 1rem 'Fira Sans', sans-serif;
+      background-image: url('./background.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
     .cursor-pointer {
       cursor: pointer;
+    }
+
+    .vertical-center {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mr-1 {
+      margin-right: 0.5rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown>
-        <textarea data-template id="slide-textarea">
-          # Hello
-        </textarea>
-      </section>
-    </div>
+  <div class="link-container cursor-pointer" onclick="onClickHandler()">
+    <b><a id="exa-link" href="" onclick="javascript:void(0)" class="link">🎉 Opportunities Ready! 🎉</a></b>
+    <p class="vertical-center">
+      <span class="mr-1">Powered by</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 90 32" preserveAspectRatio="xMidYMid meet"
+        fill="none">
+        <path
+          d="M52.3584 17.3708H37.5873C37.73 21.574 40.6557 23.6031 43.51 23.6031C46.3643 23.6031 47.9342 22.2986 48.7548 20.3782H52.1086C51.2166 23.748 48.1839 26.5018 43.51 26.5018C37.4446 26.5018 34.0908 22.0812 34.0908 16.32C34.0908 10.1602 38.1582 6.21065 43.403 6.21065C49.2543 6.21065 52.7865 11.211 52.3584 17.3708ZM43.403 9.03692C40.513 9.03692 37.9084 10.6312 37.623 14.5445H48.9332C48.8618 11.7907 46.8281 9.03692 43.403 9.03692Z"
+          fill="black"></path>
+        <path
+          d="M70.7807 6.53676L64.2514 15.849L71.4229 26.0308H67.5339L62.3248 18.6028L57.1513 26.0308H53.4407L60.5051 15.9939L53.8689 6.53676H57.7579L62.4318 13.2401L67.1414 6.53676H70.7807Z"
+          fill="black"></path>
+        <path
+          d="M85.9027 17.8781V16.6461C80.0156 17.2621 76.2694 18.1317 76.2694 20.813C76.2694 22.661 77.6608 23.893 79.98 23.893C83.0127 23.893 85.9027 22.4798 85.9027 17.8781ZM79.2664 26.5018C75.6628 26.5018 72.6658 24.4727 72.6658 20.8855C72.6658 16.2838 77.7679 14.9431 85.6529 14.0372V13.5662C85.6529 10.0152 83.6906 8.81952 81.3001 8.81952C78.6242 8.81952 77.0543 10.3051 76.9116 12.6966H73.5578C73.8789 8.49341 77.5181 6.13818 81.2644 6.13818C86.5449 6.13818 88.9354 8.71081 88.8997 14.1822L88.864 18.6752C88.8283 21.9363 89.0067 24.1828 89.3635 26.0308H86.0811C85.974 25.3061 85.867 24.5089 85.8313 23.3494C84.6539 25.3423 82.6559 26.5018 79.2664 26.5018Z"
+          fill="black"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M0.63623 0H25.6544V2.38806L14.9775 16L25.6544 29.6119V32H0.63623V0ZM13.3026 13.7975L21.9788 2.38806H4.62646L13.3026 13.7975ZM3.45099 5.24727V14.806H10.7198L3.45099 5.24727ZM10.7198 17.194H3.45099V26.7527L10.7198 17.194ZM4.62646 29.6119L13.3026 18.2025L21.9788 29.6119H4.62646Z"
+          fill="#1F40ED"></path>
+      </svg>
+    </p>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/markdown/markdown.min.js"></script>
   <script>
-    var textarea = document.getElementById('slide-textarea');
+
+    window.onClickHandler = function () {
+      return;
+    }
 
     var url = new URL(window.location.href);
-    var md = url.searchParams.get('markdown');
-    var isFull = url.searchParams.get('full');
+    var query = url.searchParams.get('query');
+    var time = url.searchParams.get('time'); // 1: past day, 2: past week, 3: past month, 4: past year, date: specific time
 
-    if (!isFull) {
-      // add cursor-pointer class to body
-      document.body.className = 'cursor-pointer';
-      url.searchParams.set('full', 'true');
-      document.body.onclick = function() {
-        window.open(url.href, '_blank');
+    if (!query) {
+      aHref.innerHTML = 'No query parameter found';
+      return;
+    }
+
+    if (!time) {
+      aHref.innerHTML = 'No time parameter found';
+      return;
+    }
+
+    var now = Date.now();
+
+    if (time) {
+      if (time === '1') {
+        now = now - 86400000;
+      } else if (time === '2') {
+        now = now - 604800000;
+      } else if (time === '3') {
+        now = now - 2592000000;
+      } else if (time === '4') {
+        now = now - 7776000000;
+      } else if (time === '5') {
+        now = now - 31536000000;
+      } else {
+        now = new Date(time).getTime();
       }
     }
 
-    // set textarea value to slide content
-    textarea.innerHTML = md || `
-    ## Hello
-    `;
+    var timeString = new Date(now).toISOString();
+    var filter = { "numResults": 30, "domainFilterType": "include", "type": "neural", "useAutoprompt": false, "startPublishedDate": "2024-07-18T13:43:02.949Z" }
+    var aHref = document.getElementById('exa-link');
+    var link = `https://exa.ai/search?q=${query}&filters=${encodeURIComponent(JSON.stringify(filter))}`;
 
-    Reveal.initialize({
-      plugins: [RevealMarkdown],
-    });
+    window.onClickHandler = function onClickHandler() {
+      window.open(link, '_blank');
+    }
+
   </script>
 </body>
 
