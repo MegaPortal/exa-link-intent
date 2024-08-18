@@ -110,7 +110,12 @@
           } else if (time === '5') {
             now = now - 31536000000;
           } else {
-            now = new Date(time).getTime();
+            if (/^\d{4}-\d{2}-\d{2}$/.test(time)) {
+              now = new Date(time).getTime();
+            } else {
+              // 1 month ago
+              now = Date.now() - 2592000000;
+            }
           }
         }
       } catch (e) {
