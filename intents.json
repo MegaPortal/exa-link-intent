@@ -14,7 +14,7 @@
                     },
                     "time": {
                         "type": "string",
-                        "description": "The time interval for the search query, which can be any string. 1: past day, 2: past week, 3: past month, 4: past year, date: specific time, e.g. 2018-01-01."
+                        "description": "The time interval for the search query, which can be a number 1~4: 1: past day, 2: past week, 3: past month, 4: past year or a date: specific time, e.g. 2018-01-01."
                     }
                 },
                 "required": [
